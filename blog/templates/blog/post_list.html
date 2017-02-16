@@ -6,15 +6,10 @@
 <div>
 <h1><a href="">Django Girls Blog</a></h1>
 </div>
-<div>
-<p>published : today</p>
-<h2><a href="">First post</a></h2>
-<p>This is my first blog post</p>
-</div>
-<div>
-<p>published : next day</p>
-<h2><a href="">Second post</a></h2>
-<p>This is my second blog post</p>
-</div>
+{% for post in posts %}
+<p>published : {{ post.published_date }} </p>
+<h1><a href="">{{post.title}}</a></h1>
+<p>{{post.text|linebreaksbr}}</p>
+{% endfor %}
 </body>
 </html>
